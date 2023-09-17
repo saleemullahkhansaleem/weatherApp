@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h2>Weather App</h2>
+      <div class="input-box">
+        <input
+          id="city"
+          type="text"
+          class="search-input"
+          placeholder="Enter city"
+        />
+        <button
+          id="search-button"
+          class="search-button"
+          onclick="getWeather(document.getElementById('city').value)"
+        >
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+      <nav>
+        <div class="mode" onclick="toggleMode(this)">
+          <ion-icon name="sunny-outline"></ion-icon>
+        </div>
+      </nav>
+    </header>
+    <div id="result" class="container"></div>
+    <div class="cities container">
+      <div
+        id="islamabad"
+        class="city-box"
+        onclick="getWeather('islamabad')"
+      ></div>
+      <div id="lahore" class="city-box" onclick="getWeather('lahore')"></div>
+      <div id="karachi" class="city-box" onclick="getWeather('karachi')"></div>
+      <div
+        id="peshawar"
+        class="city-box"
+        onclick="getWeather('peshawar')"
+      ></div>
+    </div>
+  </body>
+  <script src="./js/app.js"></script>
+</html>
