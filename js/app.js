@@ -7,17 +7,18 @@ input.addEventListener("keypress", function(event) {
 });
 const key = 'bc70339b0177231409767afa17feb974';
 function getWeather(city) {
-	console.log('city');
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const date = new Date();
 	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`
 	fetch(url).then((res) => res.json()).then((data) => {
-		console.log(data);
+		// console.log(data);
 		document.getElementById('result').innerHTML = `
 		<div class="result">
         <div class="location">
           <h2 class="">
             <ion-icon name="location-outline"></ion-icon> ${data.name}, ${data.sys.country}
           </h2>
-          <p>Min ${data.main.temp_min}°C / Max ${data.main.temp_max}°C Wind degree:${data.wind.deg}</p>
+          <p>${days[date.getDay()]} Min ${data.main.temp_min}°C / Max ${data.main.temp_max}°C Wind degree:${data.wind.deg}</p>
         </div>
         <div class="weather-details">
           <div class="">
